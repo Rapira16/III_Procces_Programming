@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include "locale.h"
+
+int main(void)
+{
+    int N,j=0;
+    setlocale(LC_CTYPE,"");
+    printf("Введите размер массива: ");
+    scanf("%d",&N);
+    int A[N];
+    printf("Заполните массив из %d элементов:\n", N);
+    for (int i=0; i<N; i++)
+    {
+        scanf("%d",&A[i]);
+    }
+    for (int i=0; i<N; i++)
+    {
+        if (A[i]%2==0)
+            {
+            A[j]=A[i];
+            j++;
+            }
+    }
+    N=j;
+    printf("Размер нового массива %d\n",N);
+    printf("Элементы нового массива: ");
+    for (int i=0; i<N; i++)
+    {
+        printf("%d ",A[i]);
+    }
+    return 0;
+}
